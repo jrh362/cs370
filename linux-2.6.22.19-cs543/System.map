@@ -21452,7 +21452,7 @@ ffffffff806272f0 t xfrm4_policy_fini
 ffffffff80627310 t af_unix_exit
 ffffffff80627350 t packet_exit
 ffffffff80628000 T __initramfs_start
-ffffffff80628084 T __initramfs_end
+ffffffff80628086 T __initramfs_end
 ffffffff80629000 B __bss_start
 ffffffff80629000 B empty_zero_page
 ffffffff80629000 B __init_end

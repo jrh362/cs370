@@ -14840,6 +14840,8 @@ main:
 	.string	"inotify_watches"
 .LASF942:
 	.string	"bd_openers"
+.LASF197:
+	.string	"lockdep_recursion"
 .LASF412:
 	.string	"mode"
 .LASF383:
@@ -14940,8 +14942,6 @@ main:
 	.string	"page_table_lock"
 .LASF683:
 	.string	"root"
-.LASF1379:
-	.string	"/home/jrh362/operating_systems/cs370/linux-2.6.22.19-cs543"
 .LASF1168:
 	.string	"readpages"
 .LASF749:
@@ -16060,8 +16060,8 @@ main:
 	.string	"write_super"
 .LASF99:
 	.string	"sched_time"
-.LASF197:
-	.string	"lockdep_recursion"
+.LASF1379:
+	.string	"/home/sjp338/cs370/linux-2.6.22.19-cs543"
 .LASF64:
 	.string	"bug_entry"
 .LASF476:
