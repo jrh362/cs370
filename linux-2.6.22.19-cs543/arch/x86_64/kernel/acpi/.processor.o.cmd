@@ -1,0 +1,1 @@
+cmd_arch/x86_64/kernel/acpi/processor.o := ld -m elf_x86_64  -r -o arch/x86_64/kernel/acpi/processor.o arch/x86_64/kernel/acpi/../../../i386/kernel/acpi/processor.o arch/x86_64/kernel/acpi/../../../i386/kernel/acpi/cstate.o

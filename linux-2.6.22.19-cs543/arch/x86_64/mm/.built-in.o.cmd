@@ -1,0 +1,1 @@
+cmd_arch/x86_64/mm/built-in.o :=  ld -m elf_x86_64  -r -o arch/x86_64/mm/built-in.o arch/x86_64/mm/init.o arch/x86_64/mm/fault.o arch/x86_64/mm/ioremap.o arch/x86_64/mm/extable.o arch/x86_64/mm/pageattr.o arch/x86_64/mm/mmap.o

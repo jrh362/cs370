@@ -1,0 +1,1 @@
+cmd_lib/built-in.o :=  ld -m elf_x86_64  -r -o lib/built-in.o lib/div64.o lib/sort.o lib/parser.o lib/halfmd4.o lib/debug_locks.o lib/random32.o lib/bust_spinlocks.o lib/hexdump.o lib/iomap.o lib/iomap_copy.o lib/devres.o lib/locking-selftest.o lib/spinlock_debug.o lib/hweight.o lib/plist.o lib/list_debug.o lib/bitrev.o lib/crc32.o lib/swiotlb.o lib/fault-inject.o

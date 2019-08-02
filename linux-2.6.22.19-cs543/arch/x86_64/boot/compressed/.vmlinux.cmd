@@ -1,0 +1,1 @@
+cmd_arch/x86_64/boot/compressed/vmlinux := ld -m elf_x86_64  -T arch/x86_64/boot/compressed/vmlinux.lds arch/x86_64/boot/compressed/head.o arch/x86_64/boot/compressed/misc.o arch/x86_64/boot/compressed/piggy.o -o arch/x86_64/boot/compressed/vmlinux 
