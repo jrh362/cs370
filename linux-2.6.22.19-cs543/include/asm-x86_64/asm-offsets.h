@@ -33,6 +33,6 @@
 
 #define crypto_tfm_ctx_offset 96 /* offsetof(struct crypto_tfm, __crt_ctx)	# */
 
-#define __NR_syscall_max 284 /* sizeof(syscalls) - 1	# */
+#define __NR_syscall_max 289 /* sizeof(syscalls) - 1	# */
 
 #endif

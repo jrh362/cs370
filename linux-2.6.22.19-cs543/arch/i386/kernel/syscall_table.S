@@ -323,3 +323,8 @@ ENTRY(sys_call_table)
 	.long sys_signalfd
 	.long sys_timerfd
 	.long sys_eventfd
+	.long sys_mygetpid
+	.long sys_steal			/* 325 */
+	.long sys_quad
+	.long sys_swipe
+	.long sys_zombify

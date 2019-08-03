@@ -1,1 +1,1 @@
-#define UTS_RELEASE "2.6.22.19-Platek"
+#define UTS_RELEASE "2.6.22.19-HERMAN"
