@@ -1,4 +1,4 @@
-cmd_arch/x86_64/kernel/vmlinux.lds := gcc -E -Wp,-MD,arch/x86_64/kernel/.vmlinux.lds.d  -nostdinc -isystem /usr/lib/gcc/x86_64-linux-gnu/5/include -D__KERNEL__ -fno-stack-protector -Iinclude  -include include/linux/autoconf.h  -P -C -Ux86_64 -D__ASSEMBLY__ -o arch/x86_64/kernel/vmlinux.lds arch/x86_64/kernel/vmlinux.lds.S
+cmd_arch/x86_64/kernel/vmlinux.lds := gcc -E -Wp,-MD,arch/x86_64/kernel/.vmlinux.lds.d  -nostdinc -isystem /usr/lib/gcc/x86_64-linux-gnu/7/include -D__KERNEL__ -fno-stack-protector -Iinclude  -include include/linux/autoconf.h  -P -C -Ux86_64 -D__ASSEMBLY__ -o arch/x86_64/kernel/vmlinux.lds arch/x86_64/kernel/vmlinux.lds.S
 
 deps_arch/x86_64/kernel/vmlinux.lds := \
   arch/x86_64/kernel/vmlinux.lds.S \

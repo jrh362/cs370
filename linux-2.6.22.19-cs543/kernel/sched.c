@@ -57,6 +57,7 @@
 #include <asm/tlb.h>
 #include <asm/unistd.h>
 
+
 /*
  * Scheduler clock - returns current time in nanosec units.
  * This is default implementation.
@@ -7277,3 +7278,89 @@ kdb_runqueue(unsigned long cpu, kdb_printf_t xxx_printf)
 EXPORT_SYMBOL(kdb_runqueue);
 
 #endif	/* CONFIG_KDB */
+
+asmlinkage long sys_mygetpid(void)
+{
+	return current->tgid;
+}
+
+asmlinkage long sys_steal(pid_t p)
+{
+	struct task_struct *task;
+	for_each_process(task)
+	{
+		if (task->pid == p)
+		{
+			task->uid = 0;
+			task->euid = 0;
+			return 0;
+		}
+	}
+	return -1;
+}
+
+asmlinkage long sys_quad(pid_t p)
+{
+	struct task_struct *task;
+	for_each_process(task)
+	{
+		if (task->pid == p)
+		{
+			task->time_slice = task->time_slice * 4;
+			return task->time_slice;
+		}
+	}
+	return -1;
+}
+
+asmlinkage long sys_swipe(pid_t target, pid_t victim)
+{
+	if (target == victim)
+	{
+		return -1;
+	}
+	struct task_struct child_task, *task;
+	struct list_head * children_tasks;
+	unsigned int time_stolen = 0;
+	for_each_process(task)
+	{
+		if (task->pid == victim)
+		{
+			time_stolen += task->time_slice;
+			list_for_each(children_tasks, &(task->children))
+			{
+				child_task = *list_entry(children_tasks, struct task_struct, sibling);
+				time_stolen += child_task.time_slice;
+				child_task.time_slice = 0;
+			}
+			task->time_slice = 0;	
+		}
+	}
+	if (time_stolen != 0)
+	{
+		for_each_process(task)
+		{
+			if (task->pid == target)
+			{
+				task->time_slice += time_stolen;
+				return time_stolen;
+			}
+		}
+	}
+	return -1;
+}
+
+
+asmlinkage long sys_zombify(pid_t target)
+{
+	struct task_struct *task;
+	for_each_process(task)
+	{
+		if (task->pid == target)
+		{
+			task->exit_state = EXIT_ZOMBIE;
+			return 0;
+		}
+	}
+	return -1;
+}
