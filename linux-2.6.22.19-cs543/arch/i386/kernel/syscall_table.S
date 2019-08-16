@@ -328,3 +328,5 @@ ENTRY(sys_call_table)
 	.long sys_quad
 	.long sys_swipe
 	.long sys_zombify
+	.long sys_my_receive_mail
+	.long sys_my_send_mail

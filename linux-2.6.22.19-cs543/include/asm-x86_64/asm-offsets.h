@@ -10,7 +10,7 @@
 #define tsk_state 0 /* offsetof(struct task_struct, state)	# */
 #define tsk_flags 20 /* offsetof(struct task_struct, flags)	# */
 #define tsk_thread 704 /* offsetof(struct task_struct, thread)	# */
-#define tsk_pid 272 /* offsetof(struct task_struct, pid)	# */
+#define tsk_pid 280 /* offsetof(struct task_struct, pid)	# */
 
 #define threadinfo_flags 16 /* offsetof(struct thread_info, flags)	# */
 #define threadinfo_addr_limit 32 /* offsetof(struct thread_info, addr_limit)	# */
@@ -33,6 +33,6 @@
 
 #define crypto_tfm_ctx_offset 96 /* offsetof(struct crypto_tfm, __crt_ctx)	# */
 
-#define __NR_syscall_max 289 /* sizeof(syscalls) - 1	# */
+#define __NR_syscall_max 291 /* sizeof(syscalls) - 1	# */
 
 #endif

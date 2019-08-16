@@ -1,7 +1,7 @@
 /*
  * Automatically generated C config: don't edit
  * Linux kernel version: 2.6.22.19-Platek
- * Fri Aug  2 19:02:26 2019
+ * Thu Aug 15 08:20:10 2019
  */
 /* ld script to make x86-64 Linux kernel
  * Written by Martin Mares <mj@atrey.karlin.mff.cuni.cz>;

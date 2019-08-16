@@ -818,6 +818,15 @@ enum sleep_type {
 
 struct prio_array;
 
+struct my_mailbox
+{
+	pid_t sender;
+	char msg[200];
+	int len;
+	struct my_mailbox *next;
+	struct semaphore my_sem;
+};
+
 struct task_struct {
 	volatile long state;	/* -1 unrunnable, 0 runnable, >0 stopped */
 	void *stack;
@@ -836,6 +845,7 @@ struct task_struct {
 	int prio, static_prio, normal_prio;
 	struct list_head run_list;
 	struct prio_array *array;
+	struct my_mailbox *mailbox;
 
 	unsigned short ioprio;
 #ifdef CONFIG_BLK_DEV_IO_TRACE

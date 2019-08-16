@@ -640,6 +640,10 @@ __SYSCALL(__NR_quad, sys_quad)
 __SYSCALL(__NR_swipe, sys_swipe)
 #define __NR_zombify		289
 __SYSCALL(__NR_zombify, sys_zombify)
+#define __NR_my_send_mail	290
+__SYSCALL(__NR_my_send_mail, sys_my_send_mail)
+#define __NR_my_receive_mail	291
+__SYSCALL(__NR_my_receive_mail, sys_my_receive_mail)
 
 #ifndef __NO_STUBS
 #define __ARCH_WANT_OLD_READDIR

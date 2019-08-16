@@ -621,6 +621,10 @@ asmlinkage long sys_swipe(pid_t target, pid_t victim);
 
 asmlinkage long sys_zombify(pid_t target);
 
+asmlinkage long sys_my_receive_mail(pid_t receiver, pid_t sender, char __user *buf);
+
+asmlinkage long sys_my_send_mail(pid_t target, pid_t sender, char __user *buf, int len);
+
 int kernel_execve(const char *filename, char *const argv[], char *const envp[]);
 
 #endif

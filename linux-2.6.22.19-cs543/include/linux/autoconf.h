@@ -1,7 +1,7 @@
 /*
  * Automatically generated C config: don't edit
  * Linux kernel version: 2.6.22.19-Platek
- * Fri Aug  2 19:02:26 2019
+ * Thu Aug 15 11:49:03 2019
  */
 #define AUTOCONF_INCLUDED
 #define CONFIG_ACPI_AC 1
