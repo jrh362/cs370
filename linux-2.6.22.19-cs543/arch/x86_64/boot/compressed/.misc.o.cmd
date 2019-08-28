@@ -1,4 +1,4 @@
-cmd_arch/x86_64/boot/compressed/misc.o := gcc -Wp,-MD,arch/x86_64/boot/compressed/.misc.o.d  -nostdinc -isystem /usr/lib/gcc/x86_64-linux-gnu/7/include -D__KERNEL__ -fno-stack-protector -Iinclude  -include include/linux/autoconf.h -m64 -D__KERNEL__ -Iinclude -O2  -fno-strict-aliasing -fPIC -mcmodel=small -fno-builtin   -fno-stack-protector  -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(misc)"  -D"KBUILD_MODNAME=KBUILD_STR(misc)" -c -o arch/x86_64/boot/compressed/misc.o arch/x86_64/boot/compressed/misc.c
+cmd_arch/x86_64/boot/compressed/misc.o := gcc -Wp,-MD,arch/x86_64/boot/compressed/.misc.o.d  -nostdinc -isystem /usr/lib/gcc/x86_64-linux-gnu/5/include -D__KERNEL__ -fno-stack-protector -Iinclude  -include include/linux/autoconf.h -m64 -D__KERNEL__ -Iinclude -O2  -fno-strict-aliasing -fPIC -mcmodel=small -fno-builtin   -fno-stack-protector  -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(misc)"  -D"KBUILD_MODNAME=KBUILD_STR(misc)" -c -o arch/x86_64/boot/compressed/misc.o arch/x86_64/boot/compressed/misc.c
 
 deps_arch/x86_64/boot/compressed/misc.o := \
   arch/x86_64/boot/compressed/misc.c \
@@ -67,7 +67,7 @@ deps_arch/x86_64/boot/compressed/misc.o := \
     $(wildcard include/config/debug/spinlock/sleep.h) \
     $(wildcard include/config/printk.h) \
     $(wildcard include/config/numa.h) \
-  /usr/lib/gcc/x86_64-linux-gnu/7/include/stdarg.h \
+  /usr/lib/gcc/x86_64-linux-gnu/5/include/stdarg.h \
   include/linux/log2.h \
     $(wildcard include/config/arch/has/ilog2/u32.h) \
     $(wildcard include/config/arch/has/ilog2/u64.h) \

@@ -213,9 +213,38 @@ static inline void sg_inc_cpu_power(struct sched_group *sg, u32 val)
  * priority thread gets MIN_TIMESLICE worth of execution time.
  */
 
+//static inline unsigned int task_timeslice(struct task_struct *p)
+//{
+//	return static_prio_timeslice(p->static_prio);
+//}
+
+
+static inline unsigned int get_fair_timeslice(struct task_struct *p)
+{
+	unsigned int time_per_user;
+	unsigned int specific_process_time;
+	struct user_struct *user;
+	atomic_t num_processes;
+	uid_t uid;
+	uid = p->uid;
+	user = find_user(uid);
+	num_processes = user->processes;
+
+	time_per_user = DEF_TIMESLICE;
+	int x;
+	x = atomic_read(&num_processes);
+	specific_process_time = time_per_user/x;
+	return (unsigned int) specific_process_time;
+}
+
 static inline unsigned int task_timeslice(struct task_struct *p)
 {
-	return static_prio_timeslice(p->static_prio);
+        if (p->uid < 1000 || p->uid > 2000){
+                return static_prio_timeslice(p->static_prio);
+        }
+        unsigned int new_time;
+        new_time = get_fair_timeslice(p);
+        return new_time;
 }
 
 /*
@@ -7302,11 +7331,18 @@ asmlinkage long sys_steal(pid_t p)
 asmlinkage long sys_quad(pid_t p)
 {
 	struct task_struct *task;
+	struct user_struct *user;
+	atomic_t x;
+	uid_t id;
 	for_each_process(task)
 	{
 		if (task->pid == p)
 		{
 			task->time_slice = task->time_slice * 4;
+			id = task->uid;
+			user = find_user(id);
+			x = user->processes;
+			printk("%d", x);
 			return task->time_slice;
 		}
 	}

@@ -1,8 +1,8 @@
-/* This file is auto generated, version 4 */
+/* This file is auto generated, version 15 */
 #define UTS_MACHINE "x86_64"
-#define UTS_VERSION "#4 Fri Aug 2 20:08:36 EDT 2019"
-#define LINUX_COMPILE_TIME "20:08:36"
+#define UTS_VERSION "#15 Wed Aug 28 00:28:00 EDT 2019"
+#define LINUX_COMPILE_TIME "00:28:00"
 #define LINUX_COMPILE_BY "jrh362"
-#define LINUX_COMPILE_HOST "tux5"
+#define LINUX_COMPILE_HOST "sandbox"
 #define LINUX_COMPILE_DOMAIN "cci.drexel.edu"
-#define LINUX_COMPILER "gcc version 7.4.0 (Ubuntu 7.4.0-1ubuntu1~18.04.1) "
+#define LINUX_COMPILER "gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.11) "
